@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * This is the main module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function one_punch_counting_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.one_punch_counting') {
+    $readme_file = file_exists(__DIR__ . '/README.md') ? __DIR__ . '/README.md' : __DIR__ . '/README.txt';
+    if (!file_exists($readme_file)) {
+      return NULL;
+    }
+    $text = file_get_contents($readme_file);
+    if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+      return '<pre>' . $text . '</pre>';
+    }
+    else {
+      // Use the Markdown filter to render the README.
+      $filter_manager = \Drupal::service('plugin.manager.filter');
+      $settings = \Drupal::configFactory()
+        ->get('markdown.settings')
+        ->getRawData();
+      $config = ['settings' => $settings];
+      $filter = $filter_manager->createInstance('markdown', $config);
+      return $filter->process($text, 'en');
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function one_punch_counting_page_attachments(array &$attachments) {
+  // Attach the CSS library to every page on the site.
+  $attachments['#attached']['library'][] = 'one_punch_counting/one_punch';
+}

@@ -1,0 +1,15 @@
+#questions-fieldset-wrapper{
+  background-color: #001f66;
+  color: yellow;
+  font-style: oblique;
+  font-weight: bold;
+  text-align: center;
+}
+.olivero-details__summary{
+  background-color: white;
+  color: black;
+  font-style: normal;
+  text-align: left;
+}
+
+

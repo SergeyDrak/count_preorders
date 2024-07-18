@@ -1,0 +1,4 @@
+one_punch:
+  css:
+    theme:
+      css/one-punch-form.css: { }

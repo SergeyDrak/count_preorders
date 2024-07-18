@@ -1,0 +1,6 @@
+name: One Punch counting
+description: Print to the console or on some page the number of preorders from zero to N, for example - [1, 1, 4, 29, 355].
+package: Custom
+
+type: module
+core_version_requirement: ^8 || ^9 || ^10

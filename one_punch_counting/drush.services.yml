@@ -1,0 +1,5 @@
+services:
+  one_punch_counting.commands:
+    class: Drupal\one_punch_counting\Commands\drushOnePunchCommands
+    tags:
+      - { name: drush.command }

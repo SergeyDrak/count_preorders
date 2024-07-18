@@ -1,0 +1,3 @@
+services:
+  drupal.one_punch_counting.count_preorders_service:
+    class: Drupal\one_punch_counting\Service\CountPreordersService
