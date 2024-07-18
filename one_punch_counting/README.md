@@ -39,7 +39,8 @@ information.
 
 ### 1 Option
 To run in the console version, run the command drush in the console
-drush one_punch_counting:count-preorders
+####
+`drush one_punch_counting:count-preorders`
 ### 2 Option
 On the block administration page (_`/admin/structure/block`_) display the Counting one push block in the region and pages where it is necessary. Go to the selected page.
 And select the required option in the form. And through the Ajax request below you will see the result for the selected option.
